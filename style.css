@@ -1,0 +1,664 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    overscroll-behavior: none;
+}
+
+nav {
+    height: 75px;
+    width: 100%;
+    background-color: rgb(32, 41, 139);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    transition: top 0.3s;
+    z-index: 15;
+}
+
+nav div {
+    width: 100%;
+}
+
+nav img {
+    height: 60px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.logo {
+    padding-top: 5px;
+    z-index: 15;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.links a.active_link {
+    border-bottom: 2px solid white;
+}
+
+.links {
+    width: 250%;
+}
+
+.socials {
+    text-align: right;
+    padding-right: 15px;
+}
+
+.socials img {
+    height: 40px;
+}
+
+.titlediv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.titlediv h1 {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 2rem;
+    color: white;
+}
+
+.burgermenu {
+    height: 100%;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    margin-right: 20px;
+    cursor: pointer;
+    z-index: 15;
+}
+
+.burgermenu span {
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    margin-top: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.burgermenu.activemenu  .one {
+    transform: translateY(13px) rotate(45deg);
+}
+
+.burgermenu.activemenu .two {
+    opacity: 0;
+}
+
+.burgermenu.activemenu .three {
+    transform: translateY(-13px) rotate(-45deg);
+}
+
+.btncontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dropmenu {
+    height: 100vh;
+    background-color: rgb(32, 41, 139);
+    text-align: center;
+    margin-top: -100vh;
+    transition: all 0.5s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+}
+
+.dropmenu.active {
+    margin-top: 0;
+}
+
+.dropmenu ul {
+    list-style-type: none;
+    line-height: 15vh;
+    margin-top: 75px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.dropmenu a {
+    font-size: 2.5rem;
+    color: white;
+    text-decoration: none;
+    margin: 40px;
+}
+
+.main {
+    height: 100vh;
+    text-align: center;
+    padding-top: 5%;
+    position: relative;
+    scroll-margin-top: 75px;
+}
+
+.mainimg {
+    background-image: url('images/landingimage.png');
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.main h2 {
+    font-family: 'Oleo Script', cursive;
+    font-size: 3.5rem;
+    color: white;
+}
+
+.main h1 {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 4rem;
+    color: white;
+}
+
+.mainlayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+    background-color: black;
+    z-index: 3;
+}
+
+.mainwriting {
+    z-index: 5;
+    position: absolute;
+    left: 50%;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+    line-height: 50px;
+    padding-top: 75px;
+    width: 100%;
+}
+
+.mainwriting h1 {
+    line-height: 75px;
+}
+
+.mainwriting a {
+    background-color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    padding: 10px 40px;
+    font-family: 'Poppins', sans-serif;
+    margin: 10px;
+    border-radius: 25px;
+    box-shadow: 0px 8px 0px 0px rgb(111, 118, 202);
+    transition: all 0.4s ease-in-out;
+    top: 0;
+    position: relative;
+}
+
+.mainwriting a:hover {
+    box-shadow: 0px 4px 0px 0px rgb(32, 41, 139);
+    top: 4px;
+}
+
+
+.menuheader {
+    width: 80%;
+    height: 180px;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 2.5rem;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.menuheader h1::before, .menuheader h1::after {
+    content: '\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0';
+    text-decoration: line-through;
+    margin: 25px;
+}
+
+.lunchmenu, .dinnermenu, .imgs {
+    scroll-margin-top: 180px;
+}
+
+.imgs {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.imgs figure {
+    width: 25%;
+}
+
+.imgs img {
+    width: 100%;
+    height: auto;
+}
+
+figcaption {
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 2rem;
+    margin-top: 25px;
+}
+
+footer h3 {
+    padding-bottom: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(181, 181, 181);
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s;
+}
+
+footer img {
+    height: 40px;
+    margin: 5px;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* LUNCH MENU */
+.lunchmenu {
+    width: 100%;
+}
+
+.lunchmenu img {
+    width: 100%;
+}
+
+/* DINNER MENU */
+.dinnermenu {
+    width: 100%;
+}
+
+.dinnermenu img {
+    width: 100%;
+}
+
+/* COOKERY VS. TAPROOM */
+.cookerycontainer {
+    margin-top: 75px;
+    scroll-margin-top: 75px;
+    width: 100%;
+}
+
+.cookerycontainer img {
+    width: 90%;
+    padding-top: 25px;
+}
+
+.cookery {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.taproomtext, .cookerytext {
+    grid-area: 'tptext';
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+.taproom {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.cookery, .taproom {
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 4rem;
+    text-align: center;
+    width: 100%;
+}
+
+.cookery h1, .taproom h1 {
+    font-size: 2.2rem;
+    padding-bottom: 1rem;
+}
+
+.cookery h2, .taproom h2 {
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+}
+
+.bolded {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* CONTACT FORM */
+.contactmain {
+    width: 60%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 50px;
+}
+
+iframe {
+    width: 100%;
+}
+
+.contactheader {
+    padding-top: 110px;
+    font-family: 'Fredericka the Great', cursive;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.6rem;
+}
+
+form {
+    text-align: center;
+}
+
+form input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+form textarea {
+    width: 80%;
+    height: 200px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+form button {
+    margin-bottom: 20px;
+    height: 50px;
+    width: 160px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(32, 41, 139);
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s;
+}
+
+form button:hover {
+    background-color: rgb(111, 118, 202);
+}
+
+/* ABOUT PAGE */
+
+.aboutheader {
+    margin-top: 105px;
+    font-size: 1.6rem;
+    font-family: 'Fredericka the Great', cursive;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.aboutmain h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding-bottom: 1rem;
+    line-height: 2.5rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.aboutmain div {
+    text-align: center;
+}
+
+.topcontainer {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.botcontainer {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.aboutmain img {
+    width: 100%;
+    padding: 25px 50px;
+}
+
+.aboutending {
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    line-height: 3.5rem;
+    font-size: 1rem;
+}
+
+.reveals {
+    position: relative;
+    padding-top: 100px;
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveals.active {
+    padding-top: 25px;
+    opacity: 1;
+}
+
+.topreveals {
+    position: relative;
+    padding-top: 100px;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.topreveals.active {
+    padding-top: 25px;
+    opacity: 1;
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1350px) {
+    .menuheader {
+        width: 100%;
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .socials {
+        display: none;
+    }
+    .cookery h1, .taproom h1 {
+        font-size: 1.8rem;
+    }
+    .cookery h2, .taproom h2 {
+        font-size: 1.5rem;
+    }
+    .contactmain {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .burgermenu {
+        display: flex;
+    }
+    .titlediv {
+        display: flex;
+    }
+    .links {
+        display: none;
+    }
+    .menuheader {
+        font-size: 1.5rem;
+    }
+    .cookery {
+        grid-template-columns: 1fr;
+    }
+    .taproom {
+        grid-template-columns: 1fr;
+    }
+    .taproomtext {
+        order: 1;
+    }
+    .taproomimgs {
+        order: 2;
+    }
+    .contactmain {
+        width: 90%;
+    }
+    .topcontainer {
+        grid-template-columns: 1fr;
+    }
+    .botcontainer {
+        grid-template-columns: 1fr;
+    }
+    .topcontainer img {
+        margin-left: 0;
+    }
+    .bottext {
+        order: 1;
+    }
+    .botimg {
+        order: 2;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    footer {
+        grid-template-columns: 1fr 1fr;
+    }
+    footer div {
+        margin-bottom: 15px;
+    }
+    .contactmain {
+        grid-template-columns: 1fr;
+    }
+    .map {
+        order: 2;
+    }
+    .formcontainer {
+        order: 1;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .menuheader {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .menuheader {
+        font-size: 1rem;
+        height: 140px;
+    }
+    .lunchmenu, .dinnermenu {
+        scroll-margin-top: 140px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .menuheader {
+        font-size: 0.8rem;
+    }
+    .titlediv {
+        display: none;
+    }
+    .dropmenu ul {
+        padding-top: 35px;
+    }
+    .dropmenu a {
+        font-size: 1.4rem;
+    }
+    footer {
+        grid-template-columns: 1fr;
+    }
+    .mainwriting {
+        top: 50vh;
+    }
+    .imgs figure {
+        width: 80%;
+        padding-bottom: 25px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .menuheader {
+        font-size: 1rem;
+    }
+    .menuheader h1:before, .menuheader h1:after {
+        text-decoration: none;
+        content: '';
+    }
+    .mainwriting h1 {
+        font-size: 3.5rem;
+        line-height: 70px;
+    }
+    .mainwriting h2 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-height: 550px) {
+    .main {
+        height: 150vh;
+    }
+}

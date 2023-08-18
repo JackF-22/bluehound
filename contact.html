@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
+    
+    <title>Contact</title>
+</head>
+<body onload="loadmain()">
+    <nav id="navbar">
+        <div class="logo">
+            <a class="logo" href="index.html"><img src="images/houndlogo.png"></a>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a onclick="decorate(this)" href="index.html#cookeries">Menu</a></li>
+                <li><a onclick="decorate(this)" href="https://www.tbdine.com/book/restaurant/blue-hound-cookery-and-taproom?idApp=71111&language=en-us"  target="_blank">Reservations</a></li>
+                <li><a onclick="decorate(this)" href="cookery.html">Cookery vs. Taproom</a></li>
+                <li><a onclick="decorate(this)" class="active_link" href="contact.html">Contact</a></li>
+                <li><a onclick="decorate(this)" href="story.html">Our Story</a></li>
+            </ul>
+        </div>
+        <div class="socials">
+            <a class="social" href="https://www.facebook.com/BlueHoundCookery/" target="_blank"><img src="images/whitefbook.png"></a>
+            <a class="social" href="https://www.instagram.com/bluehoundcookery/" target="_blank"><img src="images/Instagram_Glyph_White.png"></a>
+        </div>
+        <div class="titlediv">
+            <h1>Blue Hound</h1>
+        </div>
+        <div onclick="burgermenu()" class="burgermenu">
+            <span class="one"></span>
+            <span class="two"></span>
+            <span class="three"></span>
+        </div>
+    </nav>
+
+    <div class="dropmenu">
+        <ul>
+            <li><a onclick="burgermenu()" onclick="decorate(this)" class="active_link" href="index.html#lunchmenu">Menu</a></li>
+            <li><a onclick="burgermenu()" onclick="decorate(this)" href="https://www.tbdine.com/book/restaurant/blue-hound-cookery-and-taproom?idApp=71111&language=en-us"  target="_blank">Reservations</a></li>
+            <li><a onclick="burgermenu()" onclick="decorate(this)" href="cookery.html">Cookery vs. Taproom</a></li>
+            <li><a onclick="burgermenu()" onclick="decorate(this)" href="contact.html">Contact</a></li>
+            <li><a onclick="burgermenu()" onclick="decorate(this)" href="story.html">Our Story</a></li>
+        </ul>
+    </div>
+
+    <div class="contactheader">
+        <h1>Contact Us!</h1>
+    </div>
+    <div class="contactmain topreveals">
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d47919.867993217784!2d-72.4578932711554!3d41.35253305362342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e0!4m3!3m2!1d41.3499392!2d-72.39106559999999!4m5!1s0x89e63b4d2baecff7%3A0x5b97df4bdaab591f!2sThe%20Blue%20Hound%20Cookery%20%26%20Tap%20Room%2C%20107%20Main%20St%2C%20Ivoryton%2C%20CT%2006442!3m2!1d41.3480822!2d-72.4422979!5e0!3m2!1sen!2sus!4v1691910261682!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="formcontainer">
+            <form action="https://formsubmit.co/jtfinn22@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Name">
+                <br>
+                <input type="email" name="email" placeholder="Email Address">
+                <br>
+                <textarea name="message" placeholder="Your Message"></textarea>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div>
+            <h3><ins>Visit</ins></h3>
+            <h4>
+                107 Main Street<br>
+                Ivoryton, CT 06426<br>
+                <i class="fa-solid fa-map" style="color: #ffffff;"></i>
+                <a href="contact.html">Google Maps</a><br>
+            </h4>
+        </div>
+        <div>
+            <h3><ins>Contact Us</ins></h3>
+            <h4>
+                <a href="contact.html">Contact Page</a><br>
+                <i class="fa-solid fa-phone" style="color: #ffffff;"></i>   860 - 767 - 0260
+            </h4>
+        </div>
+        <div>
+            <h3><ins>Lunch Hours</ins></h3>
+            <h4>
+                Cookery: Wed - Sat | 11:30 - 2:00<br>
+                Taproom: Sat | 11:30 - 2:00
+            </h4>
+        </div>
+        <div>
+            <h3><ins>Dinner Hours</ins></h3>
+            <h4>
+                Mon | 5:00 - 9:00<br>
+                Tues | Closed<br>
+                Wed - Sat | 5:00 - 9:00<br>
+                Sun | 4:00 - 8:00
+            </h4>
+        </div>
+        <div>
+            <h3><ins>Socials</ins></h3>
+            <a class="social" href="https://www.facebook.com/BlueHoundCookery/" target="_blank"><img src="images/whitefbook.png"></a>
+            <a style="margin-right: 10px;" class="social" href="https://www.instagram.com/bluehoundcookery/" target="_blank"><img src="images/Instagram_Glyph_White.png"></a>
+        </div>
+    </footer>
+    
+</body>
+<script src="index.js"></script>
+</html>
